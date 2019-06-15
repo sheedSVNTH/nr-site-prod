@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NR Contractors - Services</title>
+    <link rel="stylesheet" href="public/styles/main.css">
+	<link rel="stylesheet" href="public/styles/services.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="public/scripts/fontawesome-all.js"></script>
+	
+<!-- IMPORTING OF REACT & BABEL -->
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+	<script type="text/babel">
+
+//SERVICE (REACT COMPONENT)
+class Services extends React.Component {
+	constructor(props) {
+    super(props);
+		const text = "Planning and designing your project is an exciting and rewarding step.  When its time to build, its the details you’ve worked so hard to compile that matter. At NR Contractors, no detail is too little; as they have a big impact on the successful completion of your project. In our experience, when you prioritize the details, your vision takes shape as you imagined it.";
+		
+		this.state = {
+			title: 'New Construction',
+			imgSrc: 'public/img/6411/6411extfront.jpg',
+			heading: 'Your Vision Is Our Passion',
+			text: text		
+    };
+		this.handleClick1 = this.handleClick1.bind(this);
+		this.handleClick2 = this.handleClick2.bind(this);
+		this.handleClick3 = this.handleClick3.bind(this);
+		this.handleClick4 = this.handleClick4.bind(this);
+  }
+	
+	handleClick1() {
+		const text = "Planning and designing your project is an exciting and rewarding step.  When its time to build, its the details you’ve worked so hard to compile that matter. At NR Contractors, no detail is too little; as they have a big impact on the successful completion of your project. In our experience, when you prioritize the details, your vision takes shape as you imagined it.";
+		
+		this.setState({
+			
+			title: 'New Construction',
+			imgSrc: 'public/img/6411/6411extfront.jpg',
+			heading: 'Your Vision Is Our Passion',
+			text: text
+		});
+	}
+	
+	handleClick2() {
+		const text = "Life changes and so should the space you spend most of your time.  A Growing family, updating style, or reconfiguring your layout can be important reasons to rennovate. Whether you are interested in adding on a bedroom, updating kitchen with new appliances and finishes, or converting your garage to a gameroom, our experience remodeling will bring your need to life.";
+		
+		this.setState({
+			title: 'Remodeling',
+			imgSrc: 'public/img/9179/9179gameroom.jpg',
+			heading: 'Change Is Good',
+			text: text   
+		});
+	}
+	
+	handleClick3() {
+		const text = "As residents of Florida, we know the mishaps that mother-nature can bring. Hurricane Irma shook up our beautiful community and left many with leaking roofs, torn patios, and other unwanted damages.' We are proud in providing service to aid those in need by re-building the community during the aftermath.  Further, are experienced in reparing: ";
+		
+		this.setState({
+			title: 'Damage Restoration',
+			imgSrc: 'public/img/5965/5965pool.jpg',
+			heading: 'Prepared for The Unexpected',
+			text: text  
+		});
+	}
+
+	
+	handleClick4() {
+		const text = "Through our passion of building quality luxury homes, we have had the priveldge to design, build and furnish many intimate interior spaces.";
+		
+		this.setState({
+			title: 'Interiors',
+			imgSrc: 'public/img/9179/9179office.jpg',
+			heading: 'A Complete Experience',
+			text: text
+		});
+	}	
+    render() {
+        return (
+			<div class="services">
+				<div class="service-list-container">
+				<ul>
+					<li class="divLine"></li>
+					<li onClick={this.handleClick1} class="serviceName">New Construction</li>
+					<li class="divLine"></li>
+					<li onClick={this.handleClick2} class="serviceName">Remodeling</li>
+					<li class="divLine"></li>
+					<li onClick={this.handleClick3} class="serviceName">Damage Restoration</li>
+					<li class="divLine"></li>
+					<li onClick={this.handleClick4} class="serviceName">Interiors</li>
+					<li class="divLine"></li>
+					<div class="estimate-banner">
+						<p><a href="/contact"><strong>Contact us</strong> today for a free estimate.</a></p>
+					</div>
+				</ul>
+				</div>
+				<div class="service-topic-container">
+					<h3 id="title">{this.state.title}</h3>
+				<img class ="img" src={this.state.imgSrc} alt="photo"></img>
+						<h1>{this.state.heading}</h1>
+						<p>{this.state.text}</p>
+				</div>
+				
+				<div class="project-list-container">
+				<h1 >Significant Projects</h1>
+				<li class="projDivLine"></li>
+				<div class="ind-project-container">
+					<div class="img-container">
+						<img src="public/img/6411/6411nightfront.jpg"></img>
+					</div>
+					<div class="project-text">
+						<h2 class="projectName"><a href="6411.html">6411 Highcroft</a></h2>
+						<p>Quail West - Naples, FL</p>
+					</div>
+				</div>
+				<li class="projDivLine"></li>
+				<div class="ind-project-container">
+					<div class="img-container">
+						<img src="public/img/5965/5965extfront.jpeg"></img>
+					</div>
+					<div class="project-text">
+						<h2 class="projectName"><a href="5965.html">5965 Amberwood</a></h2>
+						<p>The Strand - Naples, FL</p>
+					</div>
+				</div>
+				<li class="projDivLine"></li>
+								<div class="ind-project-container">
+					<div class="img-container">
+						<img src="public/img/9179/9179gameroom.jpg"></img>
+					</div>
+					<div class="project-text">
+						<h2 class="projectName"><a href="9179.html">9179 The Lane</a></h2>
+						<p>Quail Woods - Naples, FL</p>
+					</div>
+				</div>
+				<li class="projDivLine"></li>
+			</div>
+	</div>
+
+		);
+    }
+}
+
+ReactDOM.render(
+    <Services />,
+    document.getElementById('root')
+);
+
+</script>
+	
+</head>
+	
+<body>
+    
+<header>
+	<nav>
+        <div class="nav-container">
+			<div class="logo-div">
+				<div class="img-div"><img src="public/img/nraltLogo.jpg" alt="img"></div>
+				<div class="logo-center">
+            		<h4>NR Contractors</h4>
+					<h2>Construction Excellence Since 1992</h2>
+				</div>
+        	</div>
+			<div class="nav-div">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li><a href="/services">SERVICES</a></li>
+					<li><a href="/portfolio">PORTFOLIO</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+					<li><a href="/#about">ABOUT</a></li>
+        		</ul>
+			</div>
+        </div>
+    </nav>
+</header>
+	
+<!-- PORTFOLIO PREVIEW SECTION -->
+	
+<section class="service-intro">
+	<div class="title">
+    	<h2>Services</h2>
+
+		<div class="title-underline"></div>
+			<div>
+				<h3>We offer the following services for Residential and Commercial Buildings:</h3>
+			</div>
+		</div>    
+	</section>
+	
+<!-- END OF PORTFOLIO PREVIEW SECTION -->
+
+<!-- SERVICES SECTION -->
+	<!-- INSERT FOR REACT SERVICES COMPONENT-->
+	<div id="root"></div>
+
+<!-- End of SERVICES Section -->
+
+<!-- FOOTER SECTION -->
+<footer>
+  <div class="footer-icons">
+	  <a class="icon" href="https://www.facebook.com/NR-Contractors-Inc-130551337642330/"><i class="fab fa-facebook-f"></i></a>
+	  <a class="bbblogo" href="https://www.bbb.org/us/fl/naples/profile/construction-services/nr-contractors-inc-0653-44002390"><img  src="public/img/BBB-logo-new-3.png"></a>
+
+	<p class="copyright">Copyright&copy; 2018, All Rights Reserved, NR Contractors</p>
+	</div>
+	<div class="footer-contact-container">
+		<div class="footer-contact">
+		<p>P.O. BOX 110127 Naples, FL 34108 || 239.597.9083 || E-mail: raymus@comcast.net</p>
+		</div>    
+      </div>
+</footer>
+<!-- END OF FOOTER SECTION -->    
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="public/scripts/slideShow.js"></script>
+	
+<!-- Load React. -->
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	
+</body>
+</html>

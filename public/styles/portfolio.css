@@ -1,0 +1,137 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+header{
+    min-height: 12vh;
+}
+
+/** START of TITLE SECTION **/
+
+.service-intro{
+    min-height: 5vh;
+	opacity: 1;
+	color: #000066;
+}
+
+.title h2{
+    font-size: 40px;
+	font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.title-underline{
+    background: #000066;
+    width: 200px;
+    height: 4px;
+    margin: 10px auto;
+}
+
+.title ul a{
+    font-size: 25px;
+	font-weight: 300;
+	font-stretch: extra-condensed;
+	color: #000066; 
+    text-transform: uppercase;
+	text-decoration: none;
+}
+
+.service-intro h3{
+	font-weight: 400;
+	font-style:oblique;
+	font-size: 25px;
+	text-align: center; 
+	padding-top: 5px; 
+}
+/** END of TITLE SECTION **/
+
+/**PORTFOLIO SECTION STYLING**/
+
+.container {
+	width: 1280px;
+	min-height: 500px; 
+	margin: 40px auto 0;
+	display: flex;
+	flex-direction: row; 
+	flex-wrap: wrap;
+	margin-bottom: 100px;
+	align-items: center; 
+	align-content: center;
+}
+
+.row-container{
+	margin: auto; 
+	padding-bottom: 20px; 
+}
+.container .box{
+	position: relative;
+	width: 350px;
+	height: 200px; 
+	margin: 10px;
+	box-sizing: border-box;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+
+}
+
+.container .box .imgBox{
+	position: relative;
+	overflow: hidden;
+	text-align: center; 
+}
+
+.container .box .imgBox img{
+	max-width: 100%;
+	height: 220px; 
+	transition: transform 2s;
+}
+
+.container .box:hover .imgBox img{
+	transform: scale(1.2);
+}
+
+.container .box .details {
+	position: absolute;
+	padding: auto; 
+	top: 10px;
+	left: 10px;
+	bottom: 0px;
+	right: 10px;
+	background: rgba(255,255,255,0.8);
+	transform: scaleY(0);
+	transition: transform .5s;
+	max-height: 250px; 
+	margin: auto;
+
+}
+
+.container .box:hover .details {
+	transform: scaleY(1);
+	}
+
+.container .box .details .content{
+	text-align: center; 
+	vertical-align: middle;
+	padding-top: 25%; 
+}
+
+.container .box .details .content a{
+	text-decoration: none;
+	text-transform: uppercase;
+	transform: translateY(-50%);
+	padding: 15px;
+	color: rgba(0,0,162,1);
+	font-size: 20px;
+	font-weight: 400;
+
+}
+
+/** END OF PORTFOLIO Section **/

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NR Contractors - Contact</title>
+    <link rel="stylesheet" href="public/styles/main.css">
+	<link rel="stylesheet" href="public/styles/contact.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="public/scripts/fontawesome-all.js"></script>
+</head>
+<body>
+    
+<header>
+	<nav>
+        <div class="nav-container">
+			<div class="logo-div">
+				<div class="img-div"><img src="public/img/nraltLogo.jpg" alt="img"></div>
+				<div class="logo-center">
+            		<h4>NR Contractors</h4>
+					<h2>Construction Excellence Since 1992</h2>
+				</div>
+        	</div>
+			<div class="nav-div">
+				<ul>
+					<li><a href="/">HOME</a></li>
+					<li><a href="/services">SERVICES</a></li>
+					<li><a href="/portfolio">PORTFOLIO</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+					<li><a href="/#about">ABOUT</a></li>
+        		</ul>
+			</div>
+        </div>
+    </nav>
+</header>
+
+<!-- CONTACT SECTION -->
+
+	<section class = "contact">
+		<article class="contact-card">
+		
+				<div class="contact-title">
+					<h2>Contact Us</h2>
+					<div class="title-underline"></div>
+					<div>
+						<h3>We would be pleased to provided you with a free estimate.<br>Please call or e-mail us today with any questions.</h3>
+					</div>
+					{{msg}}
+				</div> 
+				<div class="contact-content-contain">
+					<div class="input-left">
+						<form method="POST" action="send">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email">
+          </p>
+
+          <p class="full">
+            <label>Question or Inquiry</label>
+            <textarea name="message" rows="5"></textarea>
+          </p>
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+
+					</div>
+					
+					<div class="input-right"> 
+						<h4>NR Contractors, Inc.</h4>
+						<p>P.O. BOX 110127 Naples, FL 34108</p>
+						<p>239.597.9083</p>
+						<p>raymus@comcast.net</p>
+					</div>
+				</div>
+		
+    	</article>
+
+	</section>
+    
+<!-- END OF CONTACT SECTION -->
+
+<!-- FOOTER SECTION -->
+<footer>
+  <div class="footer-icons">
+	  <a class="icon" href="https://www.facebook.com/NR-Contractors-Inc-130551337642330/"><i class="fab fa-facebook-f"></i></a>
+	  <a class="bbblogo" href="https://www.bbb.org/us/fl/naples/profile/construction-services/nr-contractors-inc-0653-44002390"><img  src="public/img/BBB-logo-new-3.png"></a>
+
+	<p class="copyright">Copyright&copy; 2018, All Rights Reserved, NR Contractors</p>
+	</div>
+	<div class="footer-contact-container">
+		<div class="footer-contact">
+		<p>P.O. BOX 110127 Naples, FL 34108 || 239.597.9083 || E-mail: raymus@comcast.net</p>
+		</div>    
+      </div>
+</footer>
+<!-- END OF FOOTER SECTION -->    
+
+</body>
+</html>

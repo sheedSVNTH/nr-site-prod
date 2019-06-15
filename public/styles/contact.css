@@ -1,0 +1,196 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+header{
+    min-height: 12vh;
+}
+
+
+/**CONTACT SECTION STYLING**/
+
+.contact{
+    min-height: 90vh;
+	background: linear-gradient(rgba(0,0,0,0.9),rgba(255,255,255,0.2)),url(../img/9179/9179office.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	padding-top: 50px; 
+	padding-bottom: 100px; 
+}
+
+.contact-title h2{
+	font-size: 40px;
+	font-weight: 400;
+    text-transform: uppercase;
+	color:ghostwhite;
+	text-align: center; 
+}
+
+.title-underline{
+    background: #000066;
+    width: 280px;
+    height: 6px;
+	border: 1px solid lightgray;; 
+    margin: 10px auto;
+}
+
+
+.contact-card {
+	display: flex;
+	justify-content: center;  
+	align-items: center;  
+}
+.contact h3 {
+	color: ghostwhite;
+	font-weight: 100;
+	font-size: 20px;
+	text-align: center; 
+}
+.contact-content-contain{
+	padding: 20px 20px; 
+	
+}
+
+.input-left {
+	width: 55%;
+	float: left; 
+}
+
+.input-right {
+	width: 45%; 
+	float: right; 
+	flex-direction: column;
+	font-size: 25px;
+	color: ghostwhite;
+	padding-left: 30px; 
+	padding-top: 120px;
+
+}
+.input-right h4 {
+	font-size: 25px;
+	color: white;
+	font-weight: 600;
+}
+
+.input-right p {
+	font-size: 22px;
+	font-weight: 100;
+}
+
+form {
+	flex: 0 0 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; 
+	align-items: center; 
+	background: rgba(0, 0, 102, .2);
+	padding: 15px 0px; 
+}
+
+form input{
+	color: black; 
+	padding: 5px 5px; 
+	margin: 10px 0;
+	width: 300px;
+	font-size: 20px;
+	font-weight: 300;
+	border: 2px solid lightgray;  
+}
+
+form textarea {
+	padding: 5px 5px; 
+	margin: 10px 0;
+	width: 450px;
+	font-size: 20px;
+	font-weight: 300;
+	border: 2px solid lightgray;
+}
+
+form input:hover, textarea:hover {
+	border: 3px solid #000066;
+
+}
+
+form button{
+	color: white;
+	background-color: gray; 
+	padding: 5px 2px;
+	font-size: 20px;
+	text-transform: uppercase;
+	border: 1px solid white; 
+}
+
+form button:hover{
+	color: white;
+	background: rgba(0, 0, 102, .5);
+
+}
+@media screen and (min-width:576px){
+    .contact{
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 776px){
+    .contact{
+        width: 100%;
+    }
+}
+
+/** END OF CONTACT Section **/
+
+
+/** START of TITLE SECTION **/
+/** DELETE LATER
+
+
+.contact-intro{
+    min-height: 40vh;
+    /**background:url(../img/blueprint2.jpg) center/cover
+    fixed no-repeat; 
+	opacity: .8;
+	color: #000066;
+}
+
+.title h2{
+    font-size: 40px;
+	font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+	color: #000066;
+}
+
+.title-underline{
+    background: #000066;
+    width: 200px;
+    height: 4px;
+    margin: 10px auto;
+}
+
+.title ul a{
+    font-size: 25px;
+	font-weight: 300;
+	font-stretch: extra-condensed;
+	color: #000066; 
+    text-transform: uppercase;
+	text-decoration: none;
+}
+
+.contact-intro h3 {
+	font-weight: 400;
+	font-style:oblique;
+	font-size: 25px;
+	text-align: center; 
+	padding-top: 10px; 
+}
+**/
+
+/** End of TITLE SECTION **/
