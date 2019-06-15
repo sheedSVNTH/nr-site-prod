@@ -6,6 +6,8 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 
+let port = process.env.PORT || 8080;
+
 // View engine setup
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -102,4 +104,4 @@ transporter.sendMail(mailOptions, (error, info) => {
 });
 
 
-app.listen(3000, () => console.log('Server is starting now....'));
+app.listen(port, () => console.log('Server is starting now....' + port));
