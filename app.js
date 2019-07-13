@@ -1,9 +1,18 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const nodemailer = require('nodemailer');
+const xoauth2 = require('xoauth2');
 
+dotenv.config();
+
+const {
+	DB_user, DB_clientId, DB_clientSecret, DB_refreshToken
+} = process.env;
+
+console.log(`chodie test ${DB_user}`);
 const app = express();
 
 let port = process.env.PORT || 8080;
@@ -71,37 +80,39 @@ app.post('/send', (req, res) => {
 		<h3>Message</h3>
 		<p>${req.body.message}</p>
 	`;
-	
-  let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: 'sender@gmail.com', // generated ethereal user
-      pass: 'password' // generated ethereal password
-    },
-	  tls:{
-		  rejectUnauthorized:false
-	  }
-  });
+
+	var transporter = nodemailer.createTransport({
+		service: 'gmail',
+		auth: {
+			type: "OAuth2",
+			user: DB_user,
+			clientId: DB_clientId,
+			clientSecret: DB_clientSecret,
+			refreshToken: DB_refreshToken
+		}
+	});
 
   // send mail with defined transport object
   let mailOptions = {
-    from: '<sender@gmail.com>', // sender address
-    to: "test@gmail.com", // list of receivers
+    from: '', // sender address
+    to: "r.muslimani@gmail.com, raymus@comcast.net", // list of receivers
     subject: "NR Contact Request", // Subject line
     text: "Hello world?", // plain text body
     html: output // html body
   };
-transporter.sendMail(mailOptions, (error, info) => {
-	if(error) {
-		return console.log(error);
-	}
-	console.log('message sent: ', info.messageId);
-	console.log('Preview URL: ', nodemailer.getTestMessageUrl(info));
-	res.render('contact', {msg: 'email has been sent'})
-});
-});
+	
+	transporter.sendMail(mailOptions, (error, info) => {
+		if(error) {
+			return console.log(error);
+		}
+		console.log('Message Sent: %s', info.messageId);
+		console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+		transporter.close();
 
+	});
+          res.render('index', {layout: false});	
+});
 
 app.listen(port, () => console.log('Server is starting now....' + port));
+
+//{msg: 'Your Contact Request has been sent!'}
